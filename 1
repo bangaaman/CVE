@@ -1,0 +1,36 @@
+Product :-- https://ably.com/login (Ably Website)
+
+Type :-- Website
+
+Classification :-- Misconfigured Account Lockout
+
+OWASP Top 10 :--- A07:2021 - Identification and Authentication Failures.
+
+Required privilege :-- Any User
+
+
+# Researcher description
+
+Amandeep Singh Banga discovered and reported this Misconfigured Account Lockout in Ably's login page.
+
+# Vulnerability description
+
+A misconfigured account lockout occurs when an application's lockout mechanism fails to prevent unauthorized access after multiple failed login attempts, allowing attackers to bypass security measures. This weakness can lead to successful brute force or credential stuffing attacks.
+
+# STEPS TO REPRODUCE :--
+
+The exploit method involves having an account in Ably. 
+
+> Try login to the account with incorrect password
+
+> The application gives an error message that account is locked please try again after 5 minutes
+
+> However, if I enter the correct password after lockout the application instead of blocking me for 5 minutes allows to login the next second.
+
+# Reference 
+
+> https://cwe.mitre.org/data/definitions/307.html
+
+# Discover 
+
+> Amandeep Singh Banga
